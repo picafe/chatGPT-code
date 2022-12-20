@@ -58,10 +58,6 @@ public class SpritePhysicsImp extends JPanel implements KeyListener {
     public void keyPressed(KeyEvent e) {
         int keyCode = e.getKeyCode();
         switch (keyCode) {
-            case KeyEvent.VK_UP:
-                // Jump
-                vy = JUMP_VELOCITY;
-                break;
             case KeyEvent.VK_LEFT:
                 // Move left
                 vx = -MOVE_VELOCITY;
@@ -78,6 +74,10 @@ public class SpritePhysicsImp extends JPanel implements KeyListener {
     public void keyReleased(KeyEvent e) {
         int keyCode = e.getKeyCode();
         switch (keyCode) {
+            case KeyEvent.VK_UP:
+                // Jump (nerfed so you cant hold it)
+                vy = JUMP_VELOCITY;
+                break;
             case KeyEvent.VK_LEFT:
                 // Stop moving left
                 if (vx < 0) {
